@@ -10,7 +10,7 @@ router.get("/", asyncHandler(async (req, res) => {
     res.status(200).send(users);
 }));
 
-router.post("/", asyncHandler(async (req, res) => {
+router.post("/register", asyncHandler(async (req, res) => {
     try {
         const user = await registerUser(req.body);
         res.status(200).send(user);
