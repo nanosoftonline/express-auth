@@ -16,7 +16,8 @@ async function hashPassword(password) {
 }
 
 async function passwordValid({ password, hashedPassword }) {
-    return await bcrypt.compare(password, hashedPassword)
+    const result = await bcrypt.compare(password, hashedPassword)
+    return result
 
 }
 
