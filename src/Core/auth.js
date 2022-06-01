@@ -15,7 +15,13 @@ async function hashPassword(password) {
 
 }
 
+async function passwordValid({ password, hashedPassword }) {
+    return await bcrypt.compare(password, hashedPassword)
+
+}
+
 module.exports = {
     generateToken,
-    hashPassword
+    hashPassword,
+    passwordValid
 }
